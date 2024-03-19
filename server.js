@@ -26,6 +26,13 @@ const sequelize = new Sequelize({
     password: '${process.env.DB_PASS}'
   })
   
+  try {
+    sequelize.authenticate() 
+    console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
+} catch(err) {
+    console.log(`Unable to connect to PG: ${err}`) 
+}
+
 
 // LISTEN
 app.listen(process.env.PORT, () => {
