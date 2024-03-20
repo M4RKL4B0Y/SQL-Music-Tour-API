@@ -19,19 +19,19 @@ app.get('/', (req, res) => {
 // SEQUELIZE CONNECTION
 // const sequelize = new Sequelize(process.env.PG_URI)
 // SEQUELIZE CONNECTION
-const sequelize = new Sequelize({
-    storage: process.env.PG_URI,
-    dialect: 'postgres',
-    username: 'postgres',
-    password: '${process.env.DB_PASS}'
-  })
+// const sequelize = new Sequelize({
+//     storage: process.env.PG_URI,
+//     dialect: 'postgres',
+//     username: 'postgres',
+//     password: '${process.env.DB_PASS}'
+//   })
   
-  try {
-    sequelize.authenticate() 
-    console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
-} catch(err) {
-    console.log(`Unable to connect to PG: ${err}`) 
-}
+//   try {
+//     sequelize.authenticate() 
+//     console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
+// } catch(err) {
+//     console.log(`Unable to connect to PG: ${err}`) 
+// }
 
 
 // LISTEN
