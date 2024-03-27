@@ -4,6 +4,7 @@ const app = express()
 const { Sequelize } = require('sequelize')
 
 
+
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
 app.use(express.json())
@@ -16,9 +17,13 @@ app.get('/', (req, res) => {
     })
 })
 
-// SEQUELIZE CONNECTION
+// CONTROLLERS 
+const bandsController = require('./controllers/bands_controller.js')
+app.use('/bands', bandsController)
+
+//SEQUELIZE CONNECTION
 // const sequelize = new Sequelize(process.env.PG_URI)
-// SEQUELIZE CONNECTION
+//SEQUELIZE CONNECTION
 // const sequelize = new Sequelize({
 //     storage: process.env.PG_URI,
 //     dialect: 'postgres',
